@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comic+Neue&family=Roboto&display=swap');
+.navbar a{
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(42, 42, 42);
+    font-weight: 300;
+}
+.navbar .login{
+    border-left: 2px solid rgba(42, 42, 42);
+    padding-left: 15px;
+}
