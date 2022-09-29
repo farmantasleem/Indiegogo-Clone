@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comic+Neue&family=Roboto&display=swap');
-
+*{
+  scroll-behavior: smooth;
+}
 .App {
   text-align: center;
   background-color: white;
@@ -25,13 +27,9 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  background-color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
