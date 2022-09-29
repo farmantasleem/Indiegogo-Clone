@@ -4,12 +4,12 @@ import ReviewItem from "./ReviewItem";
 
 export default function Review(){
     return(
-        <Container minW={"100%"}>
+        <Container minW={"100%"} mb="40px">
         <Center>
       <VStack color={"rgb(42,42,42)"}>
       <Heading>From the Indiegogo Review
       </Heading>
-      <Text>Your behind-the-scenes view of the people and stories behind Indiegogo projects
+      <Text pb={10}>Your behind-the-scenes view of the people and stories behind Indiegogo projects
       </Text>
       </VStack>
         </Center>

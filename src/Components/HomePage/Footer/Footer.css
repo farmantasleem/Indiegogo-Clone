@@ -1,0 +1,6 @@
+.footer{
+    color: rgb(42, 42, 42);
+}
+.footer input::placeholder{
+    color: rgb(42, 42, 42);
+}
