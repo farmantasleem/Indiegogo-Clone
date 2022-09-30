@@ -8,7 +8,7 @@ export default function CampaignCart({img,title,price,desc,category,id}){
       navigate(`/projects/${id}`)
   }
     return(<VStack cursor={"pointer"} onClick={()=>{handleclick(id)}}  bgColor="rgb(245,245,245)" borderRadius={"5px"}  textAlign={"left"} ml={{base:"15px",md:"0px"}} mt={{base:"10px",md:"0px"}} p={{base:"0px",md:"15px"}} maxW={{base:"90%",md:"320px"}} color="rgb(42,42,42)">
-            <Image  height={{base:"250px",md:"200px"}} width={{base:"100%",md:"320px"}} src={img}/>
+            <Image  height={{base:"250px",md:"220px"}} width={{base:"100%",md:"320px"}} src={img}/>
             <Divider orientation='horizontal' />
             <Heading fontSize={"17px"} width="full" textAlign="left">{title}</Heading>
             <Text noOfLines={"2"} fontSize={"14px"}>{desc}

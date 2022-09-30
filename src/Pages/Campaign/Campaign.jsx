@@ -2,25 +2,34 @@ import { Center, Container, Heading, Text, VStack,SimpleGrid} from "@chakra-ui/r
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
+import Loading from "../Loading/Loading";
 import CampaignCart from "./CampaignCart";
 
 
 export default function Campaign(){
     const[data,setdata]=useState([])
+    const[loading,setloading]=useState(true)
     function Getdata(){
-        axios.get("https://json-server-farman.herokuapp.com/data").then((res)=>{setdata(res.data)})
-    }
+        axios.get("https://json-server-farman.herokuapp.com/data").then((res)=>{
+            setdata(res.data)
+           setTimeout(() => {
+            setloading(false)
+           }, 1000);
+    })
+    }const{id}=useParams()
     useEffect(()=>{
         Getdata()
     },[])
-
+if(loading){
+    return <Loading/>
+}
 
     
-const{id}=useParams()
 
-    return(<><Container  backgroundSize="100%" minW="100%" minH={{base:"fit-content",md:"300px"}} bgRepeat={"no-repeat"} bgImage="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1441311610/rdre527vhsnrg20hjugp.jpg">
+
+    return(<><Container  backgroundSize="100%" minW="100%" minH={{base:"fit-content",md:"300px"}} bgRepeat={"no-repeat"} bgImage={id=="team"?"https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1441311610/rdre527vhsnrg20hjugp.jpg":"https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1655327120/p8adqppjwcthfv0rlffg.jpg"}>
             <Center minH={{base:"fit-content",md:"300px"}} >
-                <VStack color={"rgb(42,42,42)"}  m="auto" alignItems={"center"}>
+                <VStack color={id=="team"?"rgb(42,42,42)":"white"}  m="auto" alignItems={"center"}>
                 <Center>
                     <Heading m={{base:"10px",md:"auto"}}>{id=="team"?"Indiegogo Team Favorites":"10 Cool & Clever Finds"}
                     </Heading></Center>
@@ -37,6 +46,8 @@ const{id}=useParams()
  
 
        {
+        
+
         data.map(function(e){
            return <CampaignCart
            img={e.img}
