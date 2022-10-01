@@ -11,10 +11,10 @@ export default function CampaignCart({img,title,price,desc,category,id}){
             <Image  height={{base:"250px",md:"220px"}} width={{base:"100%",md:"320px"}} src={img}/>
             <Divider orientation='horizontal' />
             <Heading fontSize={"17px"} width="full" textAlign="left">{title}</Heading>
-            <Text noOfLines={"2"} fontSize={"14px"}>{desc}
+            <Text noOfLines={"2"} width="full" textAlign={"left"} fontSize={"14px"}>{desc}
          </Text>
         
-         <Heading width={"full"} fontSize={"16px"}>{category}</Heading>
+         <Heading width={"full"} textAlign="left" fontSize={"16px"}>{category}</Heading>
          <VStack  minW={"full"} maxW="full">
             <HStack minW={"full"} maxW="full">
           <Text>{price} USD raised</Text>

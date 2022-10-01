@@ -57,6 +57,8 @@ if(loading){
            desc={e.desc}
            id={e.id}
            key={e.id}
+           faq={e.faq}
+           story={e.story}
            
            />
         })
