@@ -1,10 +1,12 @@
-import React from "react";
-import {Flex,Box,Spacer,Container,HStack,Image,Center} from "@chakra-ui/react" 
+import React,{useContext} from "react";
+import {Flex,Box,Spacer,Container,HStack,Image,Center,Text} from "@chakra-ui/react" 
 import{SearchIcon} from "@chakra-ui/icons"
 import { Link, useNavigate } from "react-router-dom";
 import "./navbar.css"
+import { authContext } from "../../../Context/Context";
 
 export default function Navbar(){
+  const{logindata,setlogindata}=useContext(authContext)
   let navigate=useNavigate()
   function handleclick(){
     navigate("/")
@@ -24,9 +26,11 @@ export default function Navbar(){
   <Spacer />
   <HStack  display={{base:"none",md:"flex"}}  gap="20px">
   <Link to="/" >For Enterpeneurs</Link>
-  <Link to="/">Start a Campaign</Link>
-  <Link className="login" to="/login">Log in </Link>
-  <Link to="/signup">Sign Up</Link>
+  <Link to="/createcampaign">Start a Campaign</Link>
+{
+  logindata.name.length>0?<Text color={"rgb(236,16,120)"}>Welcome {logindata.name}</Text>:<HStack>  <Link className="login" to="/login">Log in </Link>
+  <Link to="/signup">Sign Up</Link></HStack>
+}
   </HStack>
 </Flex>
 </Container>
