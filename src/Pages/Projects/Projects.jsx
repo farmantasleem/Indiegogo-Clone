@@ -50,11 +50,11 @@ const[searchparams,setsearchparams]=useSearchParams()
         <Text  w={"full"} textAlign="left">
           {gdata.desc}</Text>
         <Heading w={"full"} textAlign={"left"}>{gdata.prc} by 3,910 backers</Heading>
-        <HStack w="full" textAlign={"left"}> <PopoverComponent/> <Button bgColor={"silver"}>Follow</Button><HStack>
-          <Button bgColor={"silver"} colorScheme='facebook' leftIcon={<FaFacebook />}>
+        <HStack w="full" textAlign={"left"}> <PopoverComponent/> <Button bgColor={"black"} color="white">Follow</Button><HStack>
+          <Button bgColor={"black"} colorScheme='facebook' leftIcon={<FaFacebook />}>
             Share
           </Button>
-          <Button bgColor={"silver"} colorScheme='twitter' leftIcon={<FaTwitter />}>
+          <Button bgColor={"black"} colorScheme='twitter' leftIcon={<FaTwitter />}>
             Share
           </Button>
         </HStack></HStack>

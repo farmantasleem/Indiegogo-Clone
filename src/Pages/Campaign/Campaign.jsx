@@ -71,9 +71,9 @@ if(loading){
        }</SimpleGrid>
        </Center>
         <Container mb="20px" bgColor="rgb(171,0,95)" width="400px">
-       <Button disabled={page==1} onClick={()=>{setpage(page-1)}} color="white">Prev</Button>
-       <Button   color="white" m="5px">{page}</Button>
-       <Button disabled={data.length<12} onClick={()=>{setpage(page+1)}} color="white">Next</Button>
+       <Button  bgColor={"black"} disabled={page==1} onClick={()=>{setpage(page-1)}} color="white">Prev</Button>
+       <Button bgColor={"black"}  color="white" m="5px">{page}</Button>
+       <Button  bgColor={"black"} disabled={data.length<12} onClick={()=>{setpage(page+1)}} color="white">Next</Button>
        </Container>
         </>)
 }
