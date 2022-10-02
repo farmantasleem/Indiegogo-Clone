@@ -1,4 +1,4 @@
-import { Center, Container, Heading, Text, VStack,SimpleGrid} from "@chakra-ui/react";
+import { Center, Container, Heading, Text, Button,VStack,SimpleGrid} from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
@@ -9,8 +9,14 @@ import CampaignCart from "./CampaignCart";
 export default function Campaign(){
     const[data,setdata]=useState([])
     const[loading,setloading]=useState(true)
+    const[page,setpage]=useState(1)
     function Getdata(){
-        axios.get("https://json-server-farman.herokuapp.com/data").then((res)=>{
+        axios.get("https://json-server-farman.herokuapp.com/data",{
+            params:{
+                    _limit:12,
+                    _page:page
+            }
+        }).then((res)=>{
             setdata(res.data)
            setTimeout(() => {
             setloading(false)
@@ -19,7 +25,7 @@ export default function Campaign(){
     }const{id}=useParams()
     useEffect(()=>{
         Getdata()
-    },[])
+    },[page])
 if(loading){
     return <Loading/>
 }
@@ -64,5 +70,10 @@ if(loading){
         })
        }</SimpleGrid>
        </Center>
+        <Container mb="20px" bgColor="rgb(171,0,95)" width="400px">
+       <Button disabled={page==1} onClick={()=>{setpage(page-1)}} color="white">Prev</Button>
+       <Button   color="white" m="5px">{page}</Button>
+       <Button disabled={data.length<12} onClick={()=>{setpage(page+1)}} color="white">Next</Button>
+       </Container>
         </>)
 }

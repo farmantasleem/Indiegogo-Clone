@@ -19,7 +19,7 @@ export default function PopoverComponent() {
     return (
         <Popover bgColor="white" placement='top-start'>
             <PopoverTrigger>
-                <Button _hover={{ color: "white", bgColor: "silver" }} color={"white"} bgColor={"rgb(229,16,117)"}>Contribute</Button>
+                <Button _hover={{ color: "white"}} width={{base:"120px",md:"auto"}} color={"white"} bgColor={"rgb(229,16,117)"}>Contribute</Button>
             </PopoverTrigger>
             <PopoverContent>
                 <PopoverHeader bgColor={"rgb(229,16,117)"} color="white" fontWeight='semibold'>Back this project
