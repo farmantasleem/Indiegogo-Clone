@@ -42,7 +42,7 @@ export default function CreateCampaign(){
    <Stack direction={"row"}  width={"100%"}>
     <VStack minW={"100%"}  p="20px" borderRadius={"10px"} textAlign={"left"}>
  
-   <Box borderRadius={"10px"} p="20px" bgColor={"red.100"}  minW={"50%"}>
+   <Box borderRadius={"10px"} p="20px" bgColor={"red.100"}  minW={{base:"100%",md:"50%"}}>
    <Heading w="100%" pb="10px"  textAlign={"Center" } fontSize="23px">CREATE NEW CAMPAIGN</Heading>
    <Progress  hasStripe bgColor={"silver"} colorScheme={"green"} value={value} />
 
